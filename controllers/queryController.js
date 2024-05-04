@@ -1,5 +1,4 @@
 import ExcelJS from "exceljs";
-import moment from "moment-timezone";
 import rappiProduct from "../models/rappiProductModel.js";
 import pyaProduct from "../models/pyaProductModel.js";
 import catchAsync from "../utils/catchAsync.js";
@@ -50,7 +49,7 @@ const filterProducts = catchAsync(async (req, res, next) => {
 });
 
 const exportDataToExcel = catchAsync(async (req, res, next) => {
-  const products = req.body.data.rappiProducts || req.body.pyaProducts;
+  const products = req.body.data.rappiProducts || req.body.data.pyaProducts;
   let workbook = new ExcelJS.Workbook();
   let worksheet = workbook.addWorksheet("Products");
 
