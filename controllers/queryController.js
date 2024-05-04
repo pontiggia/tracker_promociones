@@ -72,7 +72,6 @@ const exportDataToExcel = catchAsync(async (req, res, next) => {
     let date = new Date(product.createdAt);
     //date.setHours(date.getHours() + 3);
     product.createdAt = date.toLocaleDateString('es-ES', { day: 'numeric', month: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric' });
-    console.log(product.percentage);
     worksheet.addRow({
       productName: product.product_name,
       originalPrice: product.original_price,
