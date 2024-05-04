@@ -56,10 +56,10 @@ const scheduleFunction = async () => {
 
 // everyday at 17:00 -> 0 17 * * *
 // */2 * * * * -> every 2 minutes
-node_cron.schedule("30 10 * * *", scheduleFunction);
-node_cron.schedule("00 13 * * *", scheduleFunction);
-node_cron.schedule("00 17 * * *", scheduleFunction);
-node_cron.schedule("00 22 * * *", scheduleFunction);
+node_cron.schedule("30 09 * * *", scheduleFunction); // NY time to match ARG time
+node_cron.schedule("00 12 * * *", scheduleFunction);
+node_cron.schedule("00 16 * * *", scheduleFunction);
+node_cron.schedule("00 21 * * *", scheduleFunction);
 
 const getAllProducts = catchAsync(async (req, res, next) => {
   const products = await rappiProduct.find();

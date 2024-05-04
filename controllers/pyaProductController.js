@@ -50,10 +50,10 @@ const scheduleFunction = async () => {
   }
 };
 
-node_cron.schedule("30 10 * * *", scheduleFunction);
-node_cron.schedule("00 13 * * *", scheduleFunction);
-node_cron.schedule("00 17 * * *", scheduleFunction);
-node_cron.schedule("00 22 * * *", scheduleFunction);
+node_cron.schedule("30 09 * * *", scheduleFunction);
+node_cron.schedule("00 12 * * *", scheduleFunction);
+node_cron.schedule("00 16 * * *", scheduleFunction);
+node_cron.schedule("00 21 * * *", scheduleFunction);
 
 export const getAllProducts = catchAsync(async (req, res, next) => {
   const products = await pyaProduct.find();
