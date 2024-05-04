@@ -39,7 +39,11 @@ const pyaProductSchema = new mongoose.Schema({
     },
     createdAt: {
         type: Date,
-        default: Date.now()
+        default: () => {
+          let date = new Date();
+          date.setHours(date.getHours() - 2);
+          return date;
+        }
     }
 });
 

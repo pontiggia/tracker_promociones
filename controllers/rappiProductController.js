@@ -37,7 +37,7 @@ const scheduleFunction = async () => {
       return {
         name: productNames[index],
         products: products.filter((product) => product.isPromo),
-        last_updated: new Date(),
+        last_updated: new Date(), // last_updated: new Date().setHours(new Date().getHours() + 1),
       };
     });
     rappiCachePromos = promoProducts;
