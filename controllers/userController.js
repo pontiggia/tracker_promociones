@@ -3,7 +3,7 @@ import catchAsync from "../utils/catchAsync.js";
 import AppError from "../utils/appError.js";
 
 export const getAllUsers = catchAsync(async (req, res) => {
-  const users = await User.find();
+  const users = await User.find().select('-password');
 
   res.status(200).json({
     status: "success",
@@ -15,7 +15,7 @@ export const getAllUsers = catchAsync(async (req, res) => {
 });
 
 export const getUser = catchAsync(async (req, res) => {
-  const user = await User.findById(req.params.id);
+  const user = await User.findById(req.params.id).select('-password');
 
   res.status(200).json({
     status: "success",
