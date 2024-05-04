@@ -56,14 +56,14 @@ const exportDataToExcel = catchAsync(async (req, res, next) => {
   // Create the header row
   // Create the header row
   worksheet.columns = [
-    { header: "Nombre del producto", key: "productName", width: 25 },
+    { header: "Nombre del producto", key: "productName", width: 30 },
     { header: "Precio original", key: "originalPrice", width: 15 },
     { header: "Precion con descuento", key: "discountPrice", width: 15 },
     { header: "Porcentaje", key: "percentageDiscount", width: 10 },
     { header: "Categoria", key: "category", width: 25 },
     { header: "Restaurant", key: "restaurant", width: 25 },
     { header: "Promo", key: "promo", width: 15 },
-    { header: "Creado el", key: "createdAt", width: 20 },
+    { header: "Creado el", key: "createdAt", width: 15 },
     // Add other columns as needed
   ];
 
@@ -71,13 +71,13 @@ const exportDataToExcel = catchAsync(async (req, res, next) => {
   products.forEach((product) => {
     let date = new Date(product.createdAt);
     date.setHours(date.getHours() + 3);
-    product.createdAt = date.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', hour: 'numeric', minute: 'numeric' });
-
+    product.createdAt = date.toLocaleDateString('es-ES', { day: 'numeric', month: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric' });
+    console.log(product.percentage);
     worksheet.addRow({
       productName: product.product_name,
       originalPrice: product.original_price,
       discountPrice: product.discount_price,
-      percentageDiscount: product.percentage,
+      percentageDiscount: product.percentage || 0,
       category: product.category,
       restaurant: product.restaurant,
       promo: product.isPromo,
