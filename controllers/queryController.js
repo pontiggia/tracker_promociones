@@ -70,7 +70,7 @@ const exportDataToExcel = catchAsync(async (req, res, next) => {
   // Add rows to the worksheet
   products.forEach((product) => {
     let date = new Date(product.createdAt);
-    date.setHours(date.getHours() + 3);
+    //date.setHours(date.getHours() + 3);
     product.createdAt = date.toLocaleDateString('es-ES', { day: 'numeric', month: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric' });
     console.log(product.percentage);
     worksheet.addRow({
