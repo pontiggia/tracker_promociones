@@ -1,0 +1,27 @@
+extends base
+
+block content
+    h1.dashboard__header= promos.products[0].restaurant
+    - const last_update = new Date(promos.last_updated);
+    p.last_date= `Datos actualizados a las: ${last_update.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', hour: 'numeric', minute: 'numeric' })} hs`
+    p.promos__count= `Promociones disponibles: ${results}`
+    table.table.table-striped.table-bordered
+        thead
+            tr
+                th Producto
+                th Precio original
+                th Precio final
+                th Porcentaje
+                th Categoria
+        tbody
+        if promos.products != null
+            each product in promos.products
+                tr
+                    td= product.product_name
+                    td= product.original_price
+                    td= product.discount_price
+                    td= product.percentage
+                    td= product.category
+        else
+            tr
+                td No hay promociones disponibles

@@ -1,0 +1,40 @@
+extends base
+
+block content
+    .container
+        .row.justify-content-center
+            .col-6
+                h1.dashboard__header Exportar a Excel
+                form#exportForm
+                    .form-group
+                        label(for="site") Sitio
+                        select.form-control(name="site", id="site", required)
+                            option(value="PedidosYa") Pedidos Ya
+                            option(value="Rappi") Rappi
+                    .form-group
+                        label(for="restaurant") Restaurant
+                        select.form-control(name="restaurant", id="restaurant", required)
+                            option(value="Mostaza") Mostaza
+                            option(value="Burger") Burger King
+                    .form-group
+                        label(for="promo") Promo
+                        select.form-control(name="promo", id="promo", required)
+                            option(value="true") Si
+                            option(value="false") No
+                    .form-group
+                        label(for='dateStart') Fecha de Inicio
+                        input#dateStart.form-control(type='date' name='dateStart')
+                    .form-group
+                        label(for='endDate') Fecha de Fin
+                        input#endDate.form-control(type='date' name='endDate')
+                    .form-group
+                        label(for="time") Daypart
+                        select.form-control(name="time", id="time" required)
+                            option(value="00:00") Todo el dia
+                            option(value="10:30") Mañana (10:30)
+                            option(value="13:00") Mediodia (13:00)
+                            option(value="17:00") Tarde (17:00)
+                            option(value="22:00") Noche (22:00)
+                    .text-center
+                        button.btn.btn-primary.button__filter(type='submit', id='submitBtn') Submit
+        script(src="/js/export.js") 

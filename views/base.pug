@@ -1,0 +1,48 @@
+doctype html
+html(lang="en")
+  head
+  block head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css")
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css")
+    link(rel="shortcut icon", href="/img/favicon.png", type="image/x-icon")
+    link(rel="stylesheet", href="/css/style.css")
+    title #{title}
+  body
+    body#body-pd
+      header.header#header
+        .header_toggle
+          i.bx.bx-menu#header-toggle
+        .header_img
+          img(src="/img/favicon.png", alt="")
+      div.l-navbar#nav-bar
+        nav.nav
+          div
+            a.nav_logo(href="/home")
+              i.bx.bx-layer.nav_logo-icon
+              span.nav_logo-name Home
+            .nav_list
+              a.nav_link.active(href="/home")
+                i.bx.bx-grid-alt.nav_icon
+                span.nav_name Dashboard
+              a.nav_link(href="/history")
+                i.bx.bx-history.nav_icon
+                span.nav_name Historial
+              a.nav_link(href="/export-excel")
+                i.bx.bxs-file-export.nav_icon
+                span.nav_name Excel
+              if user.role === 'admin'
+                a.nav_link(href="/admin")
+                  i.bx.bx-user.nav_icon
+                  span.nav_name Admin
+          a.nav_link(href="/" id="logout")
+            i.bx.bx-log-out.nav_icon
+            span.nav_name SignOut
+      // Container Main start
+      div
+        block content
+          h4 Main Components
+      // Container Main end
+      script(src="/js/script.js")
+      script(src="/js/logout.js") 
