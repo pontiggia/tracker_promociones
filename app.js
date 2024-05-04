@@ -17,8 +17,6 @@ import productsRoute from "./routes/productsRoute.js";
 const app = express();
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
-app.set('trust proxy', true);
-
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
@@ -31,7 +29,7 @@ app.use(helmet());
 
 // Limit requests from same API
 const limiter = rateLimit({
-  max: 100,
+  max: 50,
   windowMs: 60 * 60 * 1000,
   message: "Too many requests from this IP, please try again in an hour!",
 });

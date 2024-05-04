@@ -50,10 +50,14 @@ const scheduleFunction = async () => {
   }
 };
 
-node_cron.schedule("30 09 * * *", scheduleFunction);
-node_cron.schedule("00 12 * * *", scheduleFunction);
-node_cron.schedule("00 16 * * *", scheduleFunction);
-node_cron.schedule("00 21 * * *", scheduleFunction);
+// schedule the task to run every day at 9:30 am
+node_cron.schedule("30 10 * * *", scheduleFunction, { timezone: "America/Argentina/Buenos_Aires" });
+// schedule the task to run every day at 12:00 pm
+node_cron.schedule("00 13 * * *", scheduleFunction, { timezone: "America/Argentina/Buenos_Aires" });
+// schedule the task to run every day at 17:00 pm
+node_cron.schedule("00 17 * * *", scheduleFunction, { timezone: "America/Argentina/Buenos_Aires" });
+// schedule the task to run every day at 22:00 pm
+node_cron.schedule("00 22 * * *", scheduleFunction, { timezone: "America/Argentina/Buenos_Aires" });
 
 export const getAllProducts = catchAsync(async (req, res, next) => {
   const products = await pyaProduct.find();
