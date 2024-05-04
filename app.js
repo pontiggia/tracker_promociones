@@ -17,6 +17,8 @@ import productsRoute from "./routes/productsRoute.js";
 const app = express();
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
+app.set('trust proxy', true);
+
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
