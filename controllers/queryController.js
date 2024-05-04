@@ -1,4 +1,5 @@
 import ExcelJS from "exceljs";
+import moment from "moment-timezone";
 import rappiProduct from "../models/rappiProductModel.js";
 import pyaProduct from "../models/pyaProductModel.js";
 import catchAsync from "../utils/catchAsync.js";
@@ -56,19 +57,23 @@ const exportDataToExcel = catchAsync(async (req, res, next) => {
   // Create the header row
   // Create the header row
   worksheet.columns = [
-    { header: "Nombre del producto", key: "productName", width: 20 },
-    { header: "Precio original", key: "originalPrice", width: 20 },
-    { header: "Precion con descuento", key: "discountPrice", width: 20 },
-    { header: "Porcentaje", key: "percentageDiscount", width: 20 },
-    { header: "Categoria", key: "category", width: 20 },
-    { header: "Restaurant", key: "restaurant", width: 20 },
-    { header: "Promo", key: "promo", width: 20 },
+    { header: "Nombre del producto", key: "productName", width: 25 },
+    { header: "Precio original", key: "originalPrice", width: 15 },
+    { header: "Precion con descuento", key: "discountPrice", width: 15 },
+    { header: "Porcentaje", key: "percentageDiscount", width: 10 },
+    { header: "Categoria", key: "category", width: 25 },
+    { header: "Restaurant", key: "restaurant", width: 25 },
+    { header: "Promo", key: "promo", width: 15 },
     { header: "Creado el", key: "createdAt", width: 20 },
     // Add other columns as needed
   ];
 
   // Add rows to the worksheet
   products.forEach((product) => {
+    let date = new Date(product.createdAt);
+    date.setHours(date.getHours() + 3);
+    product.createdAt = date.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', hour: 'numeric', minute: 'numeric' });
+
     worksheet.addRow({
       productName: product.product_name,
       originalPrice: product.original_price,
