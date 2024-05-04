@@ -16,7 +16,7 @@ const rappiUrls = {
 // AUTH RAPPI
 
 const authRappi = {
-    Authorization: "Bearer ft.gAAAAABmLURd_OFp6X6gqk5YRSvZNXoWOMsG1MjhKjaBsey-j0IQ4EyKf381zTmVtufcZXlDKj4cH5zuHHMOVwobYvhlWmD4ChZpqmn1yyGhYqfSCXE0JIFh2lNnaQNvoXJwzjuDPVsmK1Oluwv7nATQveFOszkLwJ73AAaxevDZZ0xKMWI524vgRdCPNbUNcU5MHBBRRDvdbjwDWB1kQ33XTFXhidav_imBEVnzTJ7K_IbxWx07mXO4ZMuqI3dAnREM161DcvtxKHKjp9niWTl1r_R_LlwvOZDlM37pIk6Wa_9T3JNVcRksRBo0GCB_yxPrOpW8nszHMInCvYuE9hpFL0Vsz-xyxGdkrZDHorFZubn5PXnkHRw="
+    Authorization: "Bearer ft.gAAAAABmNqIjbRLZdbAhgAlA2aYWJNeyDbifk4ggqORdilcvlNYMGXoicnPvS4p6VgJxsX4sqhFP6JQ5430lZxKDHvxNJUNsyiL3shYJqQjaz0orjta1mQ8P-DopkFVnVM_MC8jyBkt8w21MKbsPHyeq1lIxjYYi9v0YhyfC67ZnLmqnWxH1Y4u7gb36ml1GcHceaVOZDVVuIxplG6vOOpCxcXEP6FUyTsRsD_WB7r6pzFMVnDH3erxTWO232YHAhmScuWJzlDlsSGKfWOYAmVvAHu4-jGJ27z1aZN3-nE_EOKQ5WJcRvYJml-ljKeZprvUKq5ci-siREOhtC2j5Jf5vTOk6qf_DKdnQCF0C4_rrMTj5y6m4ssc="
 }
 
 // PEDIDOSYA URLS
@@ -33,6 +33,6 @@ const pedidosyaUrls = {
 
 }
 
-
+const mostazaRestaurants = {}
 
 export { rappiUrls, pedidosyaUrls, authRappi };
