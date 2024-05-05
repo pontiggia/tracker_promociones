@@ -61,7 +61,7 @@ node_cron.schedule("00 14 * * *", scheduleFunction, { timezone: "America/Argenti
 // schedule the task to run every day at 17:00 pm
 node_cron.schedule("00 18 * * *", scheduleFunction, { timezone: "America/Argentina/Buenos_Aires" });
 // schedule the task to run every day at 22:00 pm
-node_cron.schedule("00 23 * * *", scheduleFunction, { timezone: "America/Argentina/Buenos_Aires" });
+node_cron.schedule("00 22 * * *", scheduleFunction, { timezone: "America/Argentina/Buenos_Aires" });
 
 const getAllProducts = catchAsync(async (req, res, next) => {
   const products = await rappiProduct.find();

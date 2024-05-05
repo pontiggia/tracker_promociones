@@ -33,6 +33,21 @@ const pedidosyaUrls = {
 
 }
 
-const mostazaRestaurants = {}
+const mostazaRestaurants = {
+    "medium": {
+        "address": "Olga Cossettini 803",
+        "id": 146815
+    },
+    "high": {
+        "address": "Avenida Presidente Juan Domingo Perón 1205",
+        "id": 102616
+    }
+    
+
+}
+
+const burgerKingRestaurants = {
+    "Obelisco": 6316
+}
 
 export { rappiUrls, pedidosyaUrls, authRappi };
