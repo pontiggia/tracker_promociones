@@ -4,10 +4,10 @@
 
 const rappiUrls = {
     mostaza_low: "https://services.rappi.com.ar/api/web-gateway/web/restaurants-bus/store/id/132120/",
-    mostaza_medium: "https://services.rappi.com.ar/api/web-gateway/web/restaurants-bus/store/id/209774/",
-    mostaza_high: "https://services.rappi.com.ar/api/web-gateway/web/restaurants-bus/store/id/219510",
+    mostaza_medium: "https://services.rappi.com.ar/api/web-gateway/web/restaurants-bus/store/id/132130/",
+    mostaza_high: "https://services.rappi.com.ar/api/web-gateway/web/restaurants-bus/store/id/142497/",
     mostaza_high_competitive: "https://services.rappi.com.ar/api/web-gateway/web/restaurants-bus/store/id/140374",
-    burger_king_low: "https://services.rappi.com.ar/api/web-gateway/web/restaurants-bus/store/id/140418",
+    burger_king_low: "https://services.rappi.com.ar/api/web-gateway/web/restaurants-bus/store/id/124980/",
     burger_king_medium: "https://services.rappi.com.ar/api/web-gateway/web/restaurants-bus/store/id/124990",
     burger_king_high: "https://services.rappi.com.ar/api/web-gateway/web/restaurants-bus/store/id/125031",
     burger_king_high_competitive: "https://services.rappi.com.ar/api/web-gateway/web/restaurants-bus/store/id/206245"
@@ -16,7 +16,7 @@ const rappiUrls = {
 // AUTH RAPPI
 
 const authRappi = {
-    Authorization: "Bearer ft.gAAAAABmNqIjbRLZdbAhgAlA2aYWJNeyDbifk4ggqORdilcvlNYMGXoicnPvS4p6VgJxsX4sqhFP6JQ5430lZxKDHvxNJUNsyiL3shYJqQjaz0orjta1mQ8P-DopkFVnVM_MC8jyBkt8w21MKbsPHyeq1lIxjYYi9v0YhyfC67ZnLmqnWxH1Y4u7gb36ml1GcHceaVOZDVVuIxplG6vOOpCxcXEP6FUyTsRsD_WB7r6pzFMVnDH3erxTWO232YHAhmScuWJzlDlsSGKfWOYAmVvAHu4-jGJ27z1aZN3-nE_EOKQ5WJcRvYJml-ljKeZprvUKq5ci-siREOhtC2j5Jf5vTOk6qf_DKdnQCF0C4_rrMTj5y6m4ssc="
+    Authorization: "Bearer ft.gAAAAABmN_gg6Ux4kUTlAI9-QoawhYq39sbp9GxPA2Nq8w9-rF50BsFqcO6mixDjdc8VEW9y-M967DRXmRfI0kDOG4LRf_IOsD-WdBChbaoeLTLDXjbM1CTvkxD_WbENSnjqJPOny_Iumf4wFk9yNtfX8dlm8QSQ4uNWeM81dKc6WQwMFkvQY3SToErOn-Ick1-Hw0ek0ss9ROk_TDzOrscu51GFksG_HYmX-P0YOZModmnd7rbBKhNXj9ZSXnquIyP3I8a9efTpD_FoW9rcB7sUOvYplykJZGiQKMHRPiKvdKmk8P5K_V7cqI3vtRwWjqfhtL1DmbVrK9Gtf56H6Cgoktzsj9hNvy3neCghk2RXCZdDCfiS2Aw="
 }
 
 // PEDIDOSYA URLS
@@ -35,7 +35,7 @@ const pedidosyaUrls = {
 
 const mostazaRestaurants = {
     "medium": {
-        "address": "Olga Cossettini 803",
+        "address": "Olga Cossettini 800",
         "id": 146815
     },
     "high": {

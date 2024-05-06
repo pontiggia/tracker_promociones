@@ -64,6 +64,7 @@ const exportDataToExcel = catchAsync(async (req, res, next) => {
     { header: "Restaurant", key: "restaurant", width: 25 },
     { header: "Promo", key: "promo", width: 15 },
     { header: "Creado el", key: "createdAt", width: 15 },
+    { header: "Hora", key: "hour", width: 15}
     // Add other columns as needed
   ];
 
@@ -71,7 +72,8 @@ const exportDataToExcel = catchAsync(async (req, res, next) => {
   products.forEach((product) => {
     let date = new Date(product.createdAt);
     //date.setHours(date.getHours() + 3);
-    product.createdAt = date.toLocaleDateString('es-ES', { day: 'numeric', month: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric' });
+    product.createdAt = date.toLocaleDateString('es-ES', { day: 'numeric', month: 'numeric', year: 'numeric'});
+    let hour = date.toLocaleTimeString('es-ES', { hour: 'numeric', minute: 'numeric' });
     worksheet.addRow({
       productName: product.product_name,
       originalPrice: product.original_price,
@@ -81,6 +83,7 @@ const exportDataToExcel = catchAsync(async (req, res, next) => {
       restaurant: product.restaurant,
       promo: product.isPromo,
       createdAt: product.createdAt,
+      hour: hour,
     });
   });
 
