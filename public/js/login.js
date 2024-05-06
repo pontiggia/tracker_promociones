@@ -12,15 +12,16 @@ document.querySelector(".form").addEventListener("submit", function (e) {
     body: JSON.stringify({ email, password }),
   })
     .then((response) => {
-      if (!response.ok) {
-        throw new Error("Error en el login");
-      }
       return response.json();
     })
     .then((data) => {
-      setTimeout(() => {
-        window.location.href = "/home";
-      }, 1000);
+      if (data.status === "fail") {
+        alert("Usuario o contraseña incorrectos");
+      } else {
+        setTimeout(() => {
+          window.location.href = "/home";
+        }, 1000);
+      }
     })
     .catch((error) => {
       console.log(error);
