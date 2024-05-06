@@ -1,6 +1,6 @@
 // script to get the menu from PedidosYa
 
-const getMenuPedidosya = async (url) => {
+const getMenuPedidosya = async (url, restaurant) => {
   try {
     const response = await fetch(url, {
       method: "GET",
@@ -32,7 +32,7 @@ const getMenuPedidosya = async (url) => {
           percentage,
           category: section.name,
           site: "PedidosYa",
-          restaurant: data.name,
+          restaurant: restaurant,
         };
       })
     );

@@ -2,7 +2,7 @@ import node_cron from "node-cron";
 import pyaProduct from "../models/pyaProductModel.js";
 import catchAsync from "../utils/catchAsync.js";
 import AppError from "../utils/appError.js";
-import { pedidosyaUrls } from "../utils/selectors.js";
+import { pedidosyaUrls, pedidosYaMostaza, pedidosYaBurgerKing } from "../utils/selectors.js";
 import getMenuPedidosYa from "../utils/pedidosya.js";
 
 let pyaCachePromos = null;
@@ -21,14 +21,14 @@ const productNames = [
 const scheduleFunction = async () => {
   try {
     const results = await Promise.all([
-      getMenuPedidosYa(pedidosyaUrls.burger_king_low),
-      getMenuPedidosYa(pedidosyaUrls.burger_king_medium),
-      getMenuPedidosYa(pedidosyaUrls.burger_king_high),
-      getMenuPedidosYa(pedidosyaUrls.burger_king_high_competitive),
-      getMenuPedidosYa(pedidosyaUrls.mostaza_low),
-      getMenuPedidosYa(pedidosyaUrls.mostaza_medium),
-      getMenuPedidosYa(pedidosyaUrls.mostaza_high),
-      getMenuPedidosYa(pedidosyaUrls.mostaza_high_competitive),
+      getMenuPedidosYa(pedidosyaUrls.burger_king_low, pedidosYaBurgerKing.low.zone),
+      getMenuPedidosYa(pedidosyaUrls.burger_king_medium, pedidosYaBurgerKing.medium.zone),
+      getMenuPedidosYa(pedidosyaUrls.burger_king_high, pedidosYaBurgerKing.high.zone),
+      getMenuPedidosYa(pedidosyaUrls.burger_king_high_competitive, pedidosYaBurgerKing.high_competitive.zone),
+      getMenuPedidosYa(pedidosyaUrls.mostaza_low, pedidosYaMostaza.low.zone),
+      getMenuPedidosYa(pedidosyaUrls.mostaza_medium, pedidosYaMostaza.medium.zone),
+      getMenuPedidosYa(pedidosyaUrls.mostaza_high, pedidosYaMostaza.high.zone),
+      getMenuPedidosYa(pedidosyaUrls.mostaza_high_competitive, pedidosYaMostaza.high_competitive.zone),
     ]);
 
     const promoProducts = results.map((products, index) => {

@@ -22,32 +22,63 @@ const authRappi = {
 // PEDIDOSYA URLS
 
 const pedidosyaUrls = {
-    mostaza_low: "https://www.pedidosya.com.ar/v2/niles/partners/390551/menus?isJoker=false&occasion=DELIVERY",
+    mostaza_low: "https://www.pedidosya.com.ar/v2/niles/partners/55837/menus?isJoker=false&occasion=DELIVERY",
     mostaza_medium: "https://www.pedidosya.com.ar/v2/niles/partners/146815/menus?isJoker=false&occasion=DELIVERY",
     mostaza_high: "https://www.pedidosya.com.ar/v2/niles/partners/102616/menus?isJoker=false&occasion=DELIVERY",
-    mostaza_high_competitive: "https://www.pedidosya.com.ar/v2/niles/partners/228914/menus?isJoker=false&occasion=DELIVERY",
+    mostaza_high_competitive: "https://www.pedidosya.com.ar/v2/niles/partners/407732/menus?isJoker=false&occasion=DELIVERY",
     burger_king_low: "https://www.pedidosya.com.ar/v2/niles/partners/6316/menus?isJoker=false&occasion=DELIVERY",
-    burger_king_medium: "https://www.pedidosya.com.ar/v2/niles/partners/17003/menus?isJoker=false&occasion=DELIVERY",
-    burger_king_high: "https://www.pedidosya.com.ar/v2/niles/partners/53544/menus?isJoker=false&occasion=DELIVERY",
-    burger_king_high_competitive: "https://www.pedidosya.com.ar/v2/niles/partners/189262/menus?isJoker=false&occasion=DELIVERY"
+    burger_king_medium: "https://www.pedidosya.com.ar/v2/niles/partners/16725/menus?isJoker=false&occasion=DELIVERY",
+    burger_king_high: "https://www.pedidosya.com.ar/v2/niles/partners/6431/menus?isJoker=false&occasion=DELIVERY",
+    burger_king_high_competitive: "https://www.pedidosya.com.ar/v2/niles/partners/128507/menus?isJoker=false&occasion=DELIVERY"
 
 }
 
-const mostazaRestaurants = {
+const pedidosYaMostaza = {
+    "low": {
+        "address": "Av. Santa Fe 3253",
+        "id": 55837,
+        "zone": "Mostaza Alto Palermo"
+    },
     "medium": {
         "address": "Olga Cossettini 800",
-        "id": 146815
+        "id": 146815,
+        "zone": "Mostaza Puerto Madero"
     },
     "high": {
         "address": "Avenida Presidente Juan Domingo Perón 1205",
-        "id": 102616
+        "id": 102616,
+        "zone": "Mostaza San Miguel"
+    },
+    "high_competitive": {
+        "address": "Av. Rivadavia 2261",
+        "id": 407732,
+        "zone": "Mostaza Once"
+    }
+}
+
+const pedidosYaBurgerKing = {
+    "low": {
+        "address": "Carlos pelegrini 451",
+        "id": 6316,
+        "zone": "Burger king Obelisco"
+    },
+    "medium": {
+        "address": "Av. Santa Fe 4190",
+        "id": 16725,
+        "zone": "Burger king Plaza Italia"
+    },
+    "high": {
+        "address": "Av. Córdoba 2332",
+        "id": 6431,
+        "zone": "Burger king Facultad de medicina"
+    },
+    "high_competitive": {
+        "address": "Av. Bartolomé Mitre 2729, Moreno",
+        "id": 128507,
+        "zone": "Burger King Moreno"
     }
     
-
 }
 
-const burgerKingRestaurants = {
-    "Obelisco": 6316
-}
 
-export { rappiUrls, pedidosyaUrls, authRappi };
+export { rappiUrls, pedidosyaUrls, authRappi, pedidosYaMostaza, pedidosYaBurgerKing};
