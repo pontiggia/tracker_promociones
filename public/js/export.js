@@ -10,9 +10,7 @@ document
     const dateStart = document.querySelector("#dateStart").value;
     const endDate = document.querySelector("#endDate").value;
     const time = document.querySelector("#time").value;
-    console.log(site, restaurant, promo, dateStart, time);
 
-    // Make the first API call to filter the products
     fetch("/api/v1/products/history", {
       method: "POST",
       headers: {
@@ -22,9 +20,6 @@ document
     })
       .then((response) => response.json())
       .then((filteredProducts) => {
-        console.log(filteredProducts);
-
-        // Make the second API call to export the filtered products
         return fetch("/api/v1/products/export", {
           method: "POST",
           headers: {
@@ -41,7 +36,6 @@ document
         }
       })
       .then((blob) => {
-        // Create a link and click it to download the file
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;

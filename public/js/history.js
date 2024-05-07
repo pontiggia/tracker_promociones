@@ -10,9 +10,7 @@ document
     const dateStart = document.querySelector("#dateStart").value;
     const endDate = document.querySelector("#endDate").value;
     const time = document.querySelector("#time").value;
-    console.log(site, restaurant, promo, dateStart, time);
 
-    // Make the API call
     fetch("/api/v1/products/history", {
       method: "POST",
       headers: {
@@ -22,8 +20,6 @@ document
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
-        // Get table__products element
         const tableContainer = document.getElementById("table__products");
         tableContainer.innerHTML = "";
         // Create table
@@ -47,7 +43,6 @@ document
         thead.appendChild(trHead);
         table.appendChild(thead);
         let siteProducts;
-        console.log(site);
         if (site === "Rappi") {
           siteProducts = data.data.rappiProducts;
         } else if (site === "PedidosYa") {
