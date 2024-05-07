@@ -5,7 +5,7 @@ import rateLimit from "express-rate-limit";
 import mongoSanitize from "express-mongo-sanitize";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
-import hpp from "hpp";
+import xss from "xss-clean";
 
 import AppError from "./utils/appError.js";
 import globalErrorHandler from "./controllers/errorController.js";
@@ -29,6 +29,12 @@ app.set("views", path.join(__dirname, "views")); // Directorio donde se encuentr
 // Set security HTTP headers
 app.use(helmet());
 
+// Set X-XSS-Protection header
+app.use((req, res, next) => {
+  res.setHeader('X-XSS-Protection', '1; mode=block');
+  next();
+});
+
 // Limit requests from same API
 const limiter = rateLimit({
   max: 50,
@@ -40,6 +46,8 @@ app.use("/api", limiter);
 // Data sanitization against NoSQL query injection
 app.use(mongoSanitize());
 
+// Data sanitization against XSS
+app.use(xss());
 
 app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/rappi", rappiRoutes);
