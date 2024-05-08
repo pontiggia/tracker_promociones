@@ -13,8 +13,8 @@ const filterProducts = catchAsync(async (req, res, next) => {
 
   const start = new Date(dateStart);
   const end = new Date(dateEnd);
-  // add 1 minute to the end date to include all the products from that day
-  end.setMinutes(end.getMinutes() + 6);
+  
+  end.setMinutes(end.getMinutes() + 60);
 
   let products;
   let site;

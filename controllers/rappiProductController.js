@@ -19,6 +19,7 @@ const productNames = [
 ];
 
 const scheduleFunction = async () => {
+  console.log("Running Rappi schedule function");
   try {
     // Lanzar todas las solicitudes en paralelo
     const results = await Promise.all([
@@ -31,7 +32,7 @@ const scheduleFunction = async () => {
       getMenuRappi(rappiUrls.mostaza_high),
       getMenuRappi(rappiUrls.mostaza_high_competitive),
     ]);
-
+    console.log("Rappi products fetched");
     // Filtrar productos en promoción y mapearlos con sus nombres
     const promoProducts = results.map((products, index) => {
       return {
