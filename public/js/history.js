@@ -7,6 +7,7 @@ document
     const site = document.querySelector("#site").value;
     const restaurant = document.querySelector("#restaurant").value;
     const promo = document.querySelector("#promo").value;
+    const unique = document.querySelector("#unique").value;
     const dateStart = document.querySelector("#dateStart").value;
     const endDate = document.querySelector("#endDate").value;
     const time = document.querySelector("#time").value;
@@ -16,7 +17,7 @@ document
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ site, restaurant, promo, dateStart, endDate, time }),
+      body: JSON.stringify({ site, restaurant, promo, dateStart, endDate, time, unique }),
     })
       .then((response) => response.json())
       .then((data) => {

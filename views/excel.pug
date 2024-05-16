@@ -28,6 +28,11 @@ block content
                         label(for='endDate') Fecha de Fin
                         input#endDate.form-control(type='date' name='endDate')
                     .form-group
+                        label(for="unique") Unico producto
+                        select.form-control(name="unique", id="unique", required)
+                            option(value="true") Si
+                            option(value="false") No
+                    .form-group
                         label(for="time") Daypart
                         select.form-control(name="time", id="time" required)
                             option(value="00:00") Todo el dia
