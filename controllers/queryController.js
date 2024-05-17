@@ -35,8 +35,23 @@ const filterProducts = catchAsync(async (req, res, next) => {
   if (req.body.site === "Rappi") {
     if (req.body.unique === "true") {
       products = await rappiProduct.aggregate([
+        {
+          $addFields: {
+            createdAtDate: {
+              $dateToString: { format: "%Y-%m-%d", date: "$createdAt" },
+            },
+          },
+        },
         { $match: query },
-        { $group: { _id: "$product_name", doc: { $first: "$$ROOT" } } },
+        {
+          $group: {
+            _id: {
+              product_name: "$product_name",
+              createdAt: "$createdAtDate",
+            },
+            doc: { $first: "$$ROOT" },
+          },
+        },
         { $replaceRoot: { newRoot: "$doc" } },
       ]);
     } else {
@@ -46,8 +61,23 @@ const filterProducts = catchAsync(async (req, res, next) => {
   } else {
     if (req.body.unique === "true") {
       products = await pyaProduct.aggregate([
+        {
+          $addFields: {
+            createdAtDate: {
+              $dateToString: { format: "%Y-%m-%d", date: "$createdAt" },
+            },
+          },
+        },
         { $match: query },
-        { $group: { _id: "$product_name", doc: { $first: "$$ROOT" } } },
+        {
+          $group: {
+            _id: {
+              product_name: "$product_name",
+              createdAt: "$createdAtDate",
+            },
+            doc: { $first: "$$ROOT" },
+          },
+        },
         { $replaceRoot: { newRoot: "$doc" } },
       ]);
     } else {
@@ -79,7 +109,7 @@ const exportDataToExcel = catchAsync(async (req, res, next) => {
     { header: "Categoria", key: "category", width: 25 },
     { header: "Restaurant", key: "restaurant", width: 25 },
     { header: "Promo", key: "promo", width: 15 },
-    { header: "Creado el", key: "createdAt", width: 15 },
+    { header: "Fecha", key: "createdAt", width: 15 },
     { header: "Hora", key: "hour", width: 15 },
     // Add other columns as needed
   ];
