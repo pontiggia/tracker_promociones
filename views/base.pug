@@ -44,5 +44,12 @@ html(lang="en")
         block content
           h4 Main Components
       // Container Main end
+      
       script(src="/js/script.js")
       script(src="/js/logout.js") 
+      script(async, src="https://www.googletagmanager.com/gtag/js?id=G-XBNL9397DL")
+      script.
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XBNL9397DL');
