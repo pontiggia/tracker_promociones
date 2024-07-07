@@ -16,7 +16,7 @@ const rappiUrls = {
 // AUTH RAPPI
 
 const authRappi = {
-    Authorization: "Bearer ft.gAAAAABmT59hy-8HKsOUDwQ-HYhxwcUtotY5fatbAplnO0znAyPGIEgckuM6AX9zu1ed8GbsR8j2kal-ID1j3PlsjggsRTKzkWEX-btRhCXhITvKgp0VkOPEWjDF6pl83p_x0XSB98ccPLydm8EL7ELMifQnXIwUDQxWEnwlHD5ukF9Wzuzp9wbqjGoXDaHq87wcqPuY5I-hizYD28XkkmdFgSf-9DbbtUoRuaByLzjV-CGqH5sNM27yA2qnl1dbU-1kd7wS7vCXH0wGw0HTqUugX9JS_5UNU70v_hfNwRhaNdzV0aGL8Ebb488Wc0M1PuCoNbTmNednWaH8dLxDB3esBGfTkmBU0VLMmimGnSgICMFeZ6Nebfc="
+    Authorization: "Bearer token", // "Bearer token" is a placeholder for the actual token
 }
 
 // PEDIDOSYA URLS
